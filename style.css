@@ -1,0 +1,147 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Press Start 2P', sans-serif; /* Retro game font */
+  background-color: #FFD700; /* Yellow background */
+  color: #000000; /* Black text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  overflow-y: auto; /* Makes body scrollable */
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 120px;
+  background: #000000;
+  color: #FFD700;
+  width: 100%;
+  border-bottom: 5px solid #FFD700;
+  position: sticky;
+  top: 0;
+}
+
+/* Header Paragraph */
+header p {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+/* Description Styling */
+.description {
+  font-size: 0.7rem;
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.4;
+  max-width: 80%;
+}
+
+/* Main Section */
+main {
+  padding: 20px;
+  width: 90%;
+  text-align: center;
+  flex-grow: 1; /* Ensures the main content grows to fill available space */
+}
+
+/* Buttons */
+button {
+  font-family: 'Press Start 2P', sans-serif;
+  background-color: #000000;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #FFD700;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+a {
+  text-decoration: none;
+}
+
+a button {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* List Styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+li {
+  margin-bottom: 15px;
+  background-color: #000000;
+  border: 2px solid #FFD700;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+a {
+  color: #FFD700;
+  }
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #000000;
+  color: #FFD700;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.5rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Center all content */
+div, main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Telegram Mini App Sizing */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  header .title {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+.back-button {
+  margin-top: 30px;
