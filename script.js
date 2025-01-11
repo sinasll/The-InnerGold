@@ -1,4 +1,4 @@
-import validCodes from './config.js';
+import validCodes from 'config.js';
 
 document.getElementById('codeForm').addEventListener('submit', function(event) {
   event.preventDefault();
