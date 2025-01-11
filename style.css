@@ -37,12 +37,6 @@ header {
    color: #FFD700;
   }
 
-/* Header Paragraph */
-header p {
-  font-size: 0.8rem;
-  margin-top: 10px;
-}
-
 /* Description Styling */
 .description {
   font-size: 0.7rem;
