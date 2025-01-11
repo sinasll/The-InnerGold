@@ -30,14 +30,15 @@
     </a>
   </div>
 
-  <script>
+<script>
+  window.onload = function () {
     // Get account name from the URL query parameters
     const urlParams = new URLSearchParams(window.location.search);
     const accountName = urlParams.get('accountName');
 
-    // If the accountName exists, insert it into the header
+    // If accountName exists, update the username placeholder with @username format
     if (accountName) {
-      document.getElementById('accountName').textContent = `Welcome, ${accountName}!`;
+      document.getElementById('accountName').textContent = `@${accountName}`;
     }
   };
 </script>
