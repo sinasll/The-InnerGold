@@ -13,11 +13,3 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
     alert('Invalid code! You are not one of us.');
   }
 });
-
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function() {
-        if (navigator.vibrate) {
-            navigator.vibrate(100); // Vibrates for 100 milliseconds
-        }
-    });
-});
