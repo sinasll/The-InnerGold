@@ -2,7 +2,7 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
   // Define the valid codes directly in the script
-  const validCodes = ['DASF4X', 'XAFAR4', 'SINA00', 'ESAM98', 'SINA44'];
+  const validCodes = ['DASF4X', 'XAF044', 'SINA00', 'ESAM98', 'SINA44'];
   
   const enteredCode = document.getElementById('confirmationCode').value.toUpperCase();
   
