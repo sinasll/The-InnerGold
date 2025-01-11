@@ -24,14 +24,12 @@
     </form>
   </div>
   <script src="script.js"></script>
-  <script>
-  document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function() {
-        if (navigator.vibrate) {
-            navigator.vibrate(100); // Vibrates for 100 milliseconds
-        }
-    });
-});
-  </script>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Telegram SDK initialization
+    Telegram.WebApp.ready(); 
+    Telegram.WebApp.expand(); 
+  });
+</script>
 </body>
 </html>
