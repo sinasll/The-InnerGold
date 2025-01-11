@@ -16,7 +16,7 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
   // Check if the entered code is valid
   if (validCodes[enteredCode]) {
     const user = validCodes[enteredCode];
-    alert(`Code accepted! Welcome, ${user.accountName}.`);
+    alert(`Code accepted! you are, ${user.accountName}.`);
     
     // Redirect to the main page with account info (optional)
     window.location.href = `main.html?accountId=${user.accountId}&accountName=${user.accountName}`;
