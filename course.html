@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The InnerGold</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+  
+  <body>
+
+    <button onclick="goBack()" class="back-button">← Back</button>
+
+ <main>
+      <ul>
+        <li>
+          <a href="https://drive.google.com/drive/folders/1txd4bpYIyTGLtiz1VsQIFi88t7mov9zY" target="_blank">Chapter 1</a>
+        </li>
+        <li>
+          <a href="https://drive.google.com/drive/folders/1Vk0RH8STwBiesxFLEykyMc8P2OCKo-ed" target="_blank">Chapter 2</a>
+        </li>
+        <li>
+          <a href="https://drive.google.com/drive/folders/1lByo43CYo_rc1j1vmdxG-r4IkqIoXvpa" target="_blank">Chapter 3</a>
+        </li>
+
+<li>
+          <a href="https://drive.google.com/drive/folders/1ErBP69H6c7rUVYGIzSWxWyRwuh77V9T5" target="_blank">Chapter 4</a>
+        </li>
+
+      </ul>
+    </main>
+    <footer>
+      <p>© 2025 The InnerGold. All rights reserved.</p>
+    </footer>
+    <script>
+      // Back button functionality
+      function goBack() {
+        // Check if there is a previous page in history
+        if (document.referrer) {
+          window.history.back();
+        } else {
+          // If no referrer (user opened the page directly), redirect to the homepage or desired fallback URL
+          window.location.href = "index.html"; // Example fallback
+        }
+      }
+    </script>
+  </body>
+
+  </html>
