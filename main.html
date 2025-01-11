@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -18,7 +17,7 @@
       Watch the course, build, improve the skills and experiences.
     </p>
     <a href="course.html">
-      <button class="vibrate-button" id="vibrate-button">Course</button>
+      <button class="vibrate-button" id="vibrate-course">Course</button>
     </a>
   </div>
   <div>
@@ -26,24 +25,23 @@
       Check the eBooks, study to grow the visions, angels of the charts.
     </p>
     <a href="eBooks.html">
-      <button class="vibrate-button" id="vibrate-button">eBooks</button>
+      <button class="vibrate-button" id="vibrate-ebooks">eBooks</button>
     </a>
   </div>
 
-  <script src="script.js"></script>
   <script>
-    window onload = function f
-var x = document getElementById( 'vibrate' )
-x. onclick = function (
-navigator.vibrate(50000)
-//50000 indicate 50000mili secound
-｝
-}
+    window.onload = function () {
+      const buttons = document.querySelectorAll('.vibrate-button');
+      buttons.forEach(button => {
+        button.onclick = function () {
+          navigator.vibrate(500);
+        };
+      });
+    };
   </script>
 
   <footer>
     <p>© 2025 The InnerGold. All rights reserved.</p>
   </footer>
 </body>
-
 </html>
