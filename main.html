@@ -11,6 +11,7 @@
 <body>
   <header>
     <h1 class="title">TheInnerGold</h1>
+      <p id="accountName"></p>
   </header>
   <div>
     <p class="description">
@@ -30,15 +31,16 @@
   </div>
 
   <script>
-    window.onload = function () {
-      const buttons = document.querySelectorAll('.vibrate-button');
-      buttons.forEach(button => {
-        button.onclick = function () {
-          navigator.vibrate(500);
-        };
-      });
-    };
-  </script>
+    // Get account name from the URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const accountName = urlParams.get('accountName');
+
+    // If the accountName exists, insert it into the header
+    if (accountName) {
+      document.getElementById('accountName').textContent = `Welcome, ${accountName}!`;
+    }
+  };
+</script>
 
   <footer>
     <p>© 2025 The InnerGold. All rights reserved.</p>
