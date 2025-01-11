@@ -36,7 +36,7 @@
     document.querySelectorAll('.vibrate-button').forEach(button => {
       button.addEventListener('click', () => {
         if ('vibrate' in navigator) {
-          navigator.vibrate(1000); // Vibrates for 100 milliseconds
+          navigator.vibrate(50000); // Vibrates for 100 milliseconds
         }
       });
     });
