@@ -1,49 +1,50 @@
-  <!DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The InnerGold</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The InnerGold</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
 
-  <body>
-    <header>
-      <h1 class="title">TheInnerGold</h1>
-    </header>
-    <div>
-      <p class="description">
-        Watch the course, build, improve the skills and experiences.
-      </p>
-      <a href="https://drive.google.com/drive/folders/1XbE_I4EnjQ5gxtZfC-46j2pR4dxRlt5A" target="_blank">
-        <button>Course</button>
-      </a>
-    </div>
-    <div>
-       <p class="description">
-          Check the eBooks, download to grow the visions, angels of the charts.
-       </p>
-         <a href="eBooks.html">
-           <button>eBooks</button>
-         </a>
-    </div>
-    
-    
-    <script src="script.js"></script>
-    <script>
-    document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function() {
-        if (navigator.vibrate) {
-            navigator.vibrate(100); // Vibrates for 100 milliseconds
+<body>
+  <header>
+    <h1 class="title">TheInnerGold</h1>
+  </header>
+  <div>
+    <p class="description">
+      Watch the course, build, improve the skills and experiences.
+    </p>
+    <a href="https://drive.google.com/drive/folders/1XbE_I4EnjQ5gxtZfC-46j2pR4dxRlt5A" target="_blank">
+      <button class="vibrate-button">Course</button>
+    </a>
+  </div>
+  <div>
+    <p class="description">
+      Check the eBooks, download to grow the visions, angels of the charts.
+    </p>
+    <a href="eBooks.html">
+      <button class="vibrate-button">eBooks</button>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Adding vibration functionality to all buttons with the "vibrate-button" class
+    document.querySelectorAll('.vibrate-button').forEach(button => {
+      button.addEventListener('click', () => {
+        if ('vibrate' in navigator) {
+          navigator.vibrate(1000); // Vibrates for 100 milliseconds
         }
+      });
     });
-});
-    </script>
-    <footer>
-      <p>© 2025 The InnerGold. All rights reserved.</p>
-    </footer>
-  </body>
+  </script>
 
-  </html>
+  <footer>
+    <p>© 2025 The InnerGold. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
