@@ -4,7 +4,7 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
   // Define the valid codes with associated account information
   const validCodes = {
     'DASF4X': { accountName: 'das', accountId: '1234' },
-    'XAF044': { accountName: 'xaf', accountId: '5678' },
+    'XAF044': { accountName: 'xafar', accountId: '5678' },
     '044044': { accountName: 'UN', accountId: '91011' },
     'SINA00': { accountName: 'sina', accountId: '1213' },
     'ES1998': { accountName: 'es', accountId: '1415' },
