@@ -51,7 +51,7 @@ header p {
   max-width: 80%;
 }
 
-input[type="text"] {
+input[type="password"] {
   font-family: 'Press Start 2P', sans-serif;
   background-color: #000000;
   color: #FFD700;
