@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audio Player</title>
+  <style>
+    /* Position the music control icon */
+    #music-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      z-index: 1000; /* Ensure it's always on top */
+    }
+  </style>
+</head>
+<body>
+  <!-- Audio element -->
+  <audio id="theme-song" autoplay loop>
+    <source src="theme-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music icon -->
+  <img 
+    id="music-icon" 
+    src="music-on.png" 
+    alt="Music On/Off"
+  />
+
+  <script>
+    const audio = document.getElementById('theme-song');
+    const musicIcon = document.getElementById('music-icon');
+
+    // Toggle audio mute/unmute
+    musicIcon.addEventListener('click', () => {
+      if (audio.muted) {
+        audio.muted = false;
+        musicIcon.src = 'music-on.png'; // Change to music-on icon
+      } else {
+        audio.muted = true;
+        musicIcon.src = 'music-off.png'; // Change to music-off icon
+      }
+    });
+  </script>
+</body>
+</html>
