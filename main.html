@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>The InnerGold</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <h1 class="title">TheInnerGold</h1>
-      <p class="username" id="accountName">@username</p>
+    <p class="username" id="accountName">@username</p>
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="music-button" title="Toggle Music">
+      <i class="fas fa-volume-up"></i>
+    </button>
   </header>
+
   <div>
     <p class="description">
       Watch the course, build, improve the skills and experiences.
@@ -21,6 +29,7 @@
       <button class="vibrate-button" id="vibrate-course">Course</button>
     </a>
   </div>
+
   <div>
     <p class="description">
       Check the eBooks, study to grow the visions, angels of the charts.
@@ -30,21 +39,43 @@
     </a>
   </div>
 
-<script>
-  window.onload = function () {
-    // Get account name from the URL query parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const accountName = urlParams.get('accountName');
-
-    // If accountName exists, update the username placeholder with @username format
-    if (accountName) {
-      document.getElementById('accountName').textContent = `@${accountName}`;
-    }
-  };
-</script>
+  <!-- Hidden iframe to play music -->
+  <iframe src="player.html" style="display: none;" id="music-frame"></iframe>
 
   <footer>
     <p>© 2025 The InnerGold. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Update account name dynamically from URL query parameters
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const accountName = urlParams.get('accountName');
+
+      if (accountName) {
+        document.getElementById('accountName').textContent = `@${accountName}`;
+      }
+    };
+
+    // Music toggle functionality
+    const musicToggle = document.getElementById('music-toggle');
+    const musicFrame = document.getElementById('music-frame');
+
+    musicToggle.addEventListener('click', () => {
+      const musicPlayer = musicFrame.contentWindow.document.getElementById('background-music');
+      const musicIcon = musicToggle.querySelector('i');
+
+      if (musicPlayer) {
+        if (musicPlayer.muted) {
+          musicPlayer.muted = false;
+          musicIcon.className = 'fas fa-volume-up'; // Unmute icon
+        } else {
+          musicPlayer.muted = true;
+          musicIcon.className = 'fas fa-volume-mute'; // Mute icon
+        }
+      }
+    });
+  </script>
 </body>
+
 </html>
