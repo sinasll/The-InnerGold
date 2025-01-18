@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Background Music</title>
+</head>
+<body>
+  <audio id="background-music" autoplay loop>
+    <source src="Gnossienne No 1 ( Lent ) Erik Satie.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('background-music');
+
+    // Restore playback state
+    window.addEventListener('DOMContentLoaded', () => {
+      const currentTime = localStorage.getItem('musicCurrentTime') || 0;
+      const volume = localStorage.getItem('musicVolume') || 1.0;
+      const isMuted = localStorage.getItem('musicMuted') === 'true';
+
+      audio.currentTime = parseFloat(currentTime); // Restore the playback position
+      audio.volume = parseFloat(volume); // Restore volume
+      audio.muted = isMuted; // Restore muted state
+
+      audio.play().catch(() => console.log("Autoplay failed."));
+    });
+
+    // Save playback state periodically
+    audio.addEventListener('timeupdate', () => {
+      localStorage.setItem('musicCurrentTime', audio.currentTime);
+    });
+
+    // Save volume and mute state
+    audio.addEventListener('volumechange', () => {
+      localStorage.setItem('musicVolume', audio.volume);
+      localStorage.setItem('musicMuted', audio.muted);
+    });
+  </script>
+</body>
+</html>
