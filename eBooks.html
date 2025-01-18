@@ -29,6 +29,7 @@
   </footer>
 
   <script>
+ <script>
     // Back button functionality
     function goBack() {
       // Check if there is a previous page in history
@@ -36,9 +37,15 @@
         window.history.back();
       } else {
         // If no referrer (user opened the page directly), redirect to the homepage or desired fallback URL
-        window.location.href = "index.html"; // Example fallback
+        window.location.href = "main.html"; // Example fallback
       }
     }
+
+    // Music iframe load functionality
+    window.onload = function() {
+      const iframe = document.getElementById('music-frame');
+      iframe.src = 'player.html';
+    };
   </script>
 
 </body>
