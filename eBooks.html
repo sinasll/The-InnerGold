@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -8,51 +8,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-  
-  <body>
 
-    <button onclick="goBack()" class="back-button">← Back</button>
+<body>
 
- <main>
-      <ul>
-        <li>
-          <a href="Playbook 1.0.pdf" download">Playbook 1.0</a>
-        </li>
-        <li>
-          <a href="Playbook 2.0.pdf" download>Playbook 2.0</a>
-        </li>
-        <li>
-          <a href="Cheat Code.pdf" download>Cheat Code</a>
-        </li>
-      </ul>
-    </main>
+  <button onclick="goBack()" class="back-button">← Back</button>
 
-    
-    <footer>
-      <p>© 2025 The InnerGold. All rights reserved.</p>
-    </footer>
-    <script>
-      // Back button functionality
-      function goBack() {
-        // Check if there is a previous page in history
-        if (document.referrer) {
-          window.history.back();
-        } else {
-          // If no referrer (user opened the page directly), redirect to the homepage or desired fallback URL
-          window.location.href = "index.html"; // Example fallback
-        }
+  <main>
+    <ul>
+      <li><a href="Playbook 1.0.pdf" download>Playbook 1.0</a></li>
+      <li><a href="Playbook 2.0.pdf" download>Playbook 2.0</a></li>
+      <li><a href="Cheat Code.pdf" download>Cheat Code</a></li>
+    </ul>
+  </main>
+
+  <!-- Hidden iframe to play music -->
+  <iframe src="player.html" style="display: none;" id="music-frame"></iframe>
+
+  <footer>
+    <p>© 2025 The InnerGold. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Back button functionality
+    function goBack() {
+      // Check if there is a previous page in history
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        // If no referrer (user opened the page directly), redirect to the homepage or desired fallback URL
+        window.location.href = "index.html"; // Example fallback
       }
-      
-      //vibration
+    }
+  </script>
 
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function() {
-        if (navigator.vibrate) {
-            navigator.vibrate(100); // Vibrates for 100 milliseconds
-        }
-    });
-});
-    </script>
-  </body>
+</body>
 
-  </html>
+</html>
