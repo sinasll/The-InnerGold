@@ -25,7 +25,7 @@ header {
   color: #FFD700;
   width: 100%;
   border-bottom: 5px solid #FFD700;
-  position: sticky;
+  position: fixed;
   top: 0;
 }
 
