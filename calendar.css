@@ -64,7 +64,7 @@ a {
   margin-bottom: 10px;
 }
 
-/* Main Content Styling */
+/* Calendar Container */
 main {
   padding-top: 40%; /* Space for fixed header */
   padding-bottom: 20%;
@@ -72,10 +72,45 @@ main {
   padding-right: 15px;
 }
 
-.dashboard {
+.calendar-container {
   display: flex;
-  flex-direction: column; /* Stack all cards vertically */
+  flex-direction: column;
   align-items: center;
+  padding: 10px;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.nav-btn {
+  font-family: 'Press Start 2P', sans-serif;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 10px;
+  margin: 1px;
+  margin-bottom: 10px;
+}
+
+.calendar-header {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFD700;
+  margin: 0 10px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
 .stat-card {
@@ -94,54 +129,6 @@ main {
   margin-bottom: 15px;
 }
 
-.stat-card p {
-  font-size: 18px;
-  color: #fff;
-  margin: 0px 0;
-}
-
-.stat-card p#win-rate,
-.stat-card p#total-trades,
-.stat-card p#total-pips,
-.stat-card p#wins,
-.stat-card p#losses,
-.stat-card p#win-streak,
-.stat-card p#average-pips,
-.stat-card p#breakout-win-rate,
-.stat-card p#fakeout-win-rate,
-.stat-card p#dragon-win-rate,
-.stat-card p#break-prev-win-rate,
-.stat-card p#break-current-win-rate,
-.stat-card p#flip-win-rate,
-.stat-card p#one-stair-win-rate,
-.stat-card p#wick-entry-win-rate,
-.stat-card p#t5min,
-.stat-card p#t15min,
-.stat-card p#t30min,
-.stat-card p#t1hr,
-.stat-card p#t4hr,
-.stat-card p#Asia,
-.stat-card p#PreLondon,
-.stat-card p#London,
-.stat-card p#PreNewYork,
-.stat-card p#NewYork {
-  font-size: 18px;
-  font-weight: bold;
-  color: #FFD700;
-}
-
-
-/* Footer Styles */
-footer {
-  background-color: #000;
-  padding: 12px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  z-index: 1000;
-}
-
-/* Footer Styles */
 footer {
   background-color: #000;
   padding: 12px 0;
@@ -153,13 +140,10 @@ footer {
 }
 
 footer p {
-  color: #FFD700; /* Golden Yellow */
+  color: #FFD700;
   font-size: 10px;
   font-weight: bold;
 }
-
-
-
 
 /* Responsive Adjustments for Mobile */
 @media (max-width: 768px) {
