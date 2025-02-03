@@ -56,6 +56,16 @@ a {
     padding: 12px;
   }
 
+      /* Active Navigation Link Styles */
+      nav ul.nav-list li a.active {
+        background-color: #FFD700; /* Gold background for active link */
+        color: #000; /* Black text for active link */
+        border-radius: 0px; /* Optional: rounded corners */
+        padding: 10px;
+        width: 100%;
+      }
+  
+
 /*h1 style */
 .stats {
   color: #FFD700;
