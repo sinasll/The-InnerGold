@@ -56,6 +56,15 @@ nav ul.nav-list li a {
   padding: 12px;
 }
 
+    /* Active Navigation Link Styles */
+    nav ul.nav-list li a.active {
+      background-color: #FFD700;
+      color: #000;
+      border-radius: 0px;
+      padding: 10px;
+      width: 100%;
+    }
+
 /* Main Content Styling */
 main {
   padding-top: 45%; /* Space for fixed header */
