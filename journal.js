@@ -238,15 +238,9 @@ function printTradeAsPDF(trade) {
   doc.text(`Pips: ${trade.pips}`, centerX, (y += lineSpacing), { align: "center" });
   doc.text(`Outcome: ${trade.outcome}`, centerX, (y += lineSpacing), { align: "center" });
 
-  // Open the print dialog for the user to select the destination
-  doc.autoPrint({
-    variant: 'non-standard',
-  });
-
-  // Automatically triggers the print dialog
-  window.open(doc.output("bloburl"), "_blank");
+  // Download the PDF
+  doc.save(`trade-${trade.date}-${trade.time}.pdf`);
 }
-
 
 // Load trades when the page is loaded
 document.addEventListener('DOMContentLoaded', loadTrades);
