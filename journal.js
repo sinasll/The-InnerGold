@@ -65,7 +65,7 @@ function addTradeToCards(trade, index) {
       <p><strong>Session:</strong> ${trade.session}</p>
       <p><strong>Pair:</strong> ${trade.pair}</p>
       <p><strong>Setup:</strong> ${trade.setup}</p>
-      <p><strong>Playbook Entry:</strong> ${trade.entry}</p>
+      <p><strong>Entry:</strong> ${trade.entry}</p>
       <p><strong>Timeframe:</strong> ${trade.timeframe}</p>
       <p><strong>Buy/Sell:</strong> ${trade.buySell}</p>
       <p><strong>Pips:</strong> ${trade.pips}</p>
@@ -202,27 +202,44 @@ function deleteTrade(index) {
   document.body.appendChild(modal);
 }
 
-// Function to print trade details as PDF
 function printTradeAsPDF(trade) {
-  const { jsPDF } = window.jspdf;  // Initialize jsPDF
-
+  const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // Add the trade details to the PDF
-  doc.text(`Trade Details:`, 10, 10);
-  doc.text(`Date: ${trade.date}`, 10, 20);
-  doc.text(`Time: ${trade.time}`, 10, 30);
-  doc.text(`Session: ${trade.session}`, 10, 40);
-  doc.text(`Pair: ${trade.pair}`, 10, 50);
-  doc.text(`Setup: ${trade.setup}`, 10, 60);
-  doc.text(`Playbook Entry: ${trade.entry}`, 10, 70);
-  doc.text(`Timeframe: ${trade.timeframe}`, 10, 80);
-  doc.text(`Buy/Sell: ${trade.buySell}`, 10, 90);
-  doc.text(`Pips: ${trade.pips}`, 10, 100);
-  doc.text(`Outcome: ${trade.outcome}`, 10, 110);
+  // Set background to black
+  doc.setFillColor(0, 0, 0);
+  doc.rect(0, 0, 210, 297, "F");
 
-  // Download the PDF
-  doc.save(`trade-${trade.date}-${trade.time}.pdf`);
+  // Set text color to gold (#FFD700)
+  doc.setTextColor(255, 215, 0);
+
+  // Set font size to 24
+  doc.setFontSize(24);
+
+  // Use a monospace-like font (similar to "Press Start")
+  doc.setFont("courier", "bold");
+
+  // Get the center position
+  const centerX = doc.internal.pageSize.getWidth() / 2;
+
+  // Add the trade details to the PDF, all centered
+  let y = 20;
+  const lineSpacing = 20; // Set line spacing to 1
+  doc.text("Trade Details", centerX, y, { align: "center" });
+  y += lineSpacing;
+  doc.text(`Date: ${trade.date}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Time: ${trade.time}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Session: ${trade.session}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Pair: ${trade.pair}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Setup: ${trade.setup}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Entry: ${trade.entry}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Timeframe: ${trade.timeframe}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Buy/Sell: ${trade.buySell}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Pips: ${trade.pips}`, centerX, (y += lineSpacing), { align: "center" });
+  doc.text(`Outcome: ${trade.outcome}`, centerX, (y += lineSpacing), { align: "center" });
+
+  // Open PDF in a new tab
+  window.open(doc.output("bloburl"), "_blank");
 }
 
 // Load trades when the page is loaded
