@@ -1,50 +1,24 @@
-document[_0xfca30c(0x442,0x445,0x428,0x44e)+_0x11b348(0x1b5,0x1b3,0x1ca,0x1d9)]('codeForm')
-  [_0xfca30c(0x41c,0x410,0x3f5,0x439)+_0x11b348(0x1ae,0x19d,0x1e8,0x1c5)]('submit', function(_0x1813df) {
-    _0x1813df[_0x15f253(0x51a,0x519,0x53b,0x523)+'ault']();
+const form = document.getElementById('codeForm');
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // stop the real submit
 
-    // user #1
-    const _0x46e397 = {};
-    _0x46e397['accountName'] = _0x15f253(0x4ce,0x4ff,0x4ca,0x4d4);
-    _0x46e397['code']        = _0x28ac42['RycNO'];
+  const codeValue = document.getElementById('codeInput').value.trim();
 
-    // user #2
-    const _0x29f939 = {};
-    _0x29f939['accountName'] = 'xafar';
-    _0x29f939['code']        = _0x28ac42['jAJXB'];
+  const usersByCode = {
+    '044044': { accountName: 'sin',      code: 'sina00' },
+    'RycNO':  { accountName: 'das',   code: 'das444'  },
+    'jAJXB':  { accountName: 'xafar',   code: 'xaf444'  },
+    'hinJs':  { accountName: 'UN',      code: 'TIG444'  },
+    '1213':   { accountName: 'UN',     code: 'TIG$!2'   },
+    'jxrCl':  { accountName: 'UN',      code: 'TIGs!n'  } // if you actually meant this as a “code”
+  };
 
-    // user #3
-    const _0x2d6f4e = {};
-    _0x2d6f4e['accountName'] = 'UN';
-    _0x2d6f4e['code']        = _0x28ac42['hinJs'];
+  const user = usersByCode[codeValue];
 
-    // user #4
-    const _0x3e934e = {};
-    _0x3e934e['accountName'] = _0x28ac42['fdniq'];
-    _0x3e934e['code']        = '1213';
-
-    // user #5
-    const _0x3b884c = {};
-    _0x3b884c['accountName'] = 'UN';
-    _0x3b884c['accountId']   = _0x28ac42['jxrCl'];
-
-    // build mapping — note: the old “esam” block has been removed
-    const _0x3f12df = {};
-    _0x3f12df['044044'] = _0x2d6f4e;
-    _0x3f12df[_0x15f253(0x522,0x549,0x540,0x521)] = _0x46e397;
-    _0x3f12df[_0x15f253(0x4e5,0x52f,0x53a,0x50c)] = _0x29f939;
-    _0x3f12df[_0x15f253(0x4c8,0x4e4,0x4f8,0x4dd)] = _0x3e934e;
-    _0x3f12df[_0x3445bc(0x132,0x144,0x111,0x128)] = _0x3b884c;
-
-    // lookup and redirect
-    const _0x5ab869 = document
-      [_0x15f253(0x50e,0x4ea,0x50b,0x4fb)+_0x15f253(0x525,0x538,0x538,0x512)](_0x28ac42[_0x15f253(0x502,0x50f,0x524,0x507)])
-      [_0x15f253(0x51b,0x4fd,0x4e3,0x4ee)][_0x15f253(0x52c,0x530,0x529,0x50d)+'e']();
-
-    if (_0x3f12df[_0x5ab869]) {
-      const _0x493ab4 = _0x3f12df[_0x5ab869];
-      alert('Code accepted! you are, ' + _0x493ab4['accountName'] + '.');
-      window.location = 'https://…?user=' + _0x493ab4['accountName'];
-    } else {
-      alert('Code rejected');
-    }
+  if (user) {
+    alert(`Code accepted! You are, ${user.accountName}.`);
+    window.location.href = `https://example.com/?user=${encodeURIComponent(user.accountName)}`;
+  } else {
+    alert('Code rejected');
+  }
 });
