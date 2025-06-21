@@ -12,8 +12,8 @@ form.addEventListener('submit', function(event) {
   };
   if (usersByCode[codeValue]) {
     alert('Code accepted! You’re one of us.');
+    window.location.href = 'main.html';
   } else {
     alert('Code rejected! You’re not one of us.');
   }
-  window.location.href = 'main.html';
 });
