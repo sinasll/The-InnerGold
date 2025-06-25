@@ -6,7 +6,7 @@ form.addEventListener('submit', function(event) {
     'sina00': { accountName: 'sin',   code: 'sina00' },
     'das444':  { accountName: 'das',   code: 'das444' },
     'xafar4':  { accountName: 'xafar', code: 'xaf444' },
-    'tig000':  { accountName: 'UN',    code: 'TIG444' },
+    'evar99':  { accountName: 'evar',    code: 'evar99' },
     'tig444':   { accountName: 'UN',    code: 'TIG$!2' },
     'tigtig':  { accountName: 'UN',    code: 'TIGs!n' }
   };
